@@ -4,15 +4,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.time.LocalDateTime;
-
 @RestController
 @RequestMapping("/api")
 public class Controller {
 
     @GetMapping("/notificar")
     public String notificar() {
-        return LocalDateTime.now().toString();
+        return ISOTimeGenerator.getTime();
     }
 
     @GetMapping("/ping")
